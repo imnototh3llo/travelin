@@ -1,0 +1,67 @@
+{
+	"name": "travelin",
+	"version": "0.2.0",
+	"description": "✨ Travelin — Telegram bot for automatic flight price monitoring and check-in. It notifies you of great deals and saves your time.",
+	"scripts": {
+		"build:clean": "del-cli dist",
+		"build:check": "tsc --noEmit",
+		"build:esm": "swc ./src --out-dir ./dist",
+		"build": "pnpm build:clean && pnpm build:check && pnpm build:esm",
+		"lint": "prettier --check . && eslint . --format=pretty",
+		"format": "prettier --write . && eslint . --fix --format=pretty",
+		"fmt": "pnpm format",
+		"start": "node --enable-source-maps dist/src/index.js",
+		"start:dev": "pnpm build && pnpm start",
+		"start:prod": "pnpm fmt && pnpm build && pnpm start"
+	},
+	"type": "module",
+	"main": "dist/src/index.js",
+	"files": [
+		"dist/"
+	],
+	"keywords": [
+		"aviation",
+		"automation",
+		"telegram-bot",
+		"traveling",
+		"check-in",
+		"flight-monitoring",
+		"price-tracking",
+		"travel-deals",
+		"airfare-alerts",
+		"flight-checkin"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/imnototh3llo/travelin.git"
+	},
+	"bugs": {
+		"url": "https://github.com/imnototh3llo/travelin/issues"
+	},
+	"author": "imnototh3llo <poliwmen@gmail.com>",
+	"license": "Apache-2.0",
+	"dependencies": {
+		"dotenv": "^16.4.5",
+		"telegraf": "^4.16.3",
+		"typegram": "^5.2.0"
+	},
+	"devDependencies": {
+		"@sapphire/ts-config": "5.0.1",
+		"@swc/cli": "^0.4.1-nightly.20240914",
+		"@swc/core": "^1.7.39",
+		"@types/node": "^22.7.8",
+		"@typescript-eslint/eslint-plugin": "^8.11.0",
+		"@typescript-eslint/parser": "^8.11.0",
+		"del-cli": "^6.0.0",
+		"eslint": "^9.13.0",
+		"eslint-config-neon": "^0.2.0",
+		"eslint-formatter-pretty": "^6.0.1",
+		"lodash.merge": "^4.6.2",
+		"prettier": "^3.3.3",
+		"typescript": "^5.6.3"
+	},
+	"engines": {
+		"node": ">=18.20.4"
+	},
+	"packageManager": "pnpm@9.12.2"
+}
